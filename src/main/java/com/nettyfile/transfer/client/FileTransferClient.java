@@ -42,11 +42,11 @@ public class FileTransferClient {
     /** TCP 缓冲区: 600 KB（BDP = 512KB，上取整留余量） */
     private static final int TCP_BUFFER_SIZE = 600 * 1024;
 
-    /** Netty 写缓冲区高水位: 512 KB（= BDP，≦ TCP 缓冲区） */
-    private static final int HIGH_WATERMARK = 512 * 1024;
+    /** Netty 写缓冲区高水位: 4MB  */
+    private static final int HIGH_WATERMARK = 4 * 1024 * 1024;
 
-    /** Netty 写缓冲区低水位: 256 KB（= BDP / 2，滞回区间） */
-    private static final int LOW_WATERMARK = 256 * 1024;
+    /** Netty 写缓冲区低水位: 2MB  */
+    private static final int LOW_WATERMARK = 2 * 1024 * 1024;
 
     private EventLoopGroup group;
     private Channel channel;
